@@ -1,13 +1,18 @@
 import { supabase } from "./supabase"
 
-export const signUp = async (
+export const signUpWithRole = async (
   email: string,
-  password: string
+  password: string,
+  role?: string
 ) => {
+  // store role in user_metadata (lowercase expected by backend)
   return supabase.auth.signUp({
     email,
     password,
-  })
+    options: {
+      data: { role: role || 'customer' },
+    },
+  });
 }
 
 export const signIn = async (
