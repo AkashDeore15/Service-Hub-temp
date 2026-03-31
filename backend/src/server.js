@@ -6,9 +6,6 @@ import compression from 'compression';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import  { checkSupabaseConnection } from './config/supabase.js';
-
-
-import testRoutes from './routes/testRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import serviceRoutes from './routes/serviceRoutes.js';
 import profileRoutes from './routes/profileRoutes.js';
@@ -16,7 +13,7 @@ import providerRoutes from './routes/providerRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
 import complaintRoutes from './routes/complaintRoutes.js';
 import authRoutes from './routes/authRoutes.js';
-import userRoutes from './routes/userRoutes.js';
+// import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -46,14 +43,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth/login', loginLimiter);
 
 app.use('/api/auth', authRoutes);
-app.use('/api/test', testRoutes);
+// app.use('/api/test', testRoutes);
 app.use('/api/categories', categoryRoutes);
-app.use('/api/profile', profileRoutes);
+app.use('/api/users', profileRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/providers', providerRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/complaints', complaintRoutes);
-app.use('/api/users', userRoutes);
+// app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => {
   res.json({
