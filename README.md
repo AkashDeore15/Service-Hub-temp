@@ -1,7 +1,8 @@
 ### 📢 Latest Project Update
-> **Change:** fix(auth): JWKS-based token verification — no secrets required (#25)
-> **Date:** Mon Mar 23 19:01:53 UTC 2026
+> **Change:** Revise README for clarity and project details
+> **Date:** Tue Mar 31 01:19:05 UTC 2026
 ---
+
 
 
 
